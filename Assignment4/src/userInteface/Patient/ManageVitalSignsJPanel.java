@@ -51,9 +51,9 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         populatePatientTable(personList);
         populateVitalSigns(null);
         populateFilter();
-        //populateCommunity(personList);
+        populateCommunity(personList);
     }
-    /*
+    
     private void populateCommunity(ArrayList<Person> personList){
         DefaultTableModel model = (DefaultTableModel) tblComm.getModel();
         model.setRowCount(0);
@@ -66,30 +66,23 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         int num = Community.getItemCount();
         String temparr[] = new String[num];
         
+        Object[] row = new Object[num];
+        for(int i=0;i<num;i++){
+        String temp = Community.getItemAt(i);
+        int counttemp = 0;
+        
         for (Person person : personList) {
-   
-            for(int i=0;i<num;i++){
-                if(temparr[i]==person.getCommunity()){
-                    
-                }
+            if(person.getCommunity().equals(temp)){
+                counttemp++;
             }
-            if(person.getCommunity())
-            Object[] row = new Object[2];
-            row[0] = person;
-            row[1]= person.getAge();
-            if(person.getPatient()!=null)
-            {
-                row[2] = person.getPatient().getPatientID();
-            }
-            else
-            {
-                row[2] = "Patient Not Created";
-            }
-            
+        }       
+            row[0] = temp;
+            row[1]= counttemp;
             model.addRow(row);
         }
-    }*/
-    
+            
+        }
+
     private void populateFilter(){
         Community.removeAllItems();
         //Community.addItem("Null");
