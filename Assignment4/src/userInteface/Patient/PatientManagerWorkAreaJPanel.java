@@ -43,14 +43,17 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
 
-        managePatientsJButton.setText("Manage Patients");
+        managePatientsJButton.setBackground(new java.awt.Color(102, 102, 102));
+        managePatientsJButton.setText("Manage Patient Information");
         managePatientsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managePatientsJButtonActionPerformed(evt);
             }
         });
 
-        manageVitalSignsJButton.setText("Manage Vital Signs");
+        manageVitalSignsJButton.setBackground(new java.awt.Color(102, 102, 102));
+        manageVitalSignsJButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        manageVitalSignsJButton.setText("Manage Patient Vital Signs");
         manageVitalSignsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVitalSignsJButtonActionPerformed(evt);
@@ -64,18 +67,18 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(manageVitalSignsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(managePatientsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(347, Short.MAX_VALUE))
+                    .addComponent(managePatientsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(manageVitalSignsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                .addContainerGap(271, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(managePatientsJButton)
-                .addGap(18, 18, 18)
-                .addComponent(manageVitalSignsJButton)
-                .addContainerGap(619, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addComponent(managePatientsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(manageVitalSignsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(497, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

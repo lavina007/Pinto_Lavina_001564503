@@ -45,6 +45,9 @@
       <SubComponents>
         <Container class="javax.swing.JPanel" name="leftJPanel">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[200, 700]"/>
             </Property>
@@ -86,7 +89,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="patientManagerJButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Manage Patients"/>
+                <Property name="text" type="java.lang.String" value="Patient Information"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientManagerJButtonActionPerformed"/>
@@ -94,7 +97,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="managePersonsJButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Manage Person&apos;s"/>
+                <Property name="text" type="java.lang.String" value="People Information"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="managePersonsJButtonActionPerformed"/>
@@ -129,10 +132,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="727" max="-2" attributes="0"/>
-                          <EmptySpace pref="56" max="32767" attributes="0"/>
+                          <Component id="jLabel1" pref="773" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

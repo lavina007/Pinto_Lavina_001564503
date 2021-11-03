@@ -253,7 +253,7 @@ public class ViewCarsJPanel1 extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(chkNotAvailable)
                                     .addComponent(chkNotValid))))))
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

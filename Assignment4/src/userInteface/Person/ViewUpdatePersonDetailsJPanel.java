@@ -41,11 +41,17 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
         personAgeJTextField.setInputVerifier(integerVerifier);
         InputVerifier stringVerifier = new MyStringVerifier();
         personNameJTextField.setInputVerifier(stringVerifier);
+        CommunityjTextField2.setInputVerifier(stringVerifier);
+        HouseNojTextField1.setInputVerifier(stringVerifier);
+        CityJTextField.setInputVerifier(stringVerifier);
     }
 
     private void populatePatientDetails() {
         personNameJTextField.setText(person.getPersonName());
         personAgeJTextField.setText(String.valueOf(person.getAge()));
+        CommunityjTextField2.setText(person.getCommunity());
+        HouseNojTextField1.setText(person.getHouseNo());
+        CityJTextField.setText(person.getCity());
     }
 
     /**
@@ -65,36 +71,62 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         editJButton = new javax.swing.JButton();
         saveJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        HouseNojTextField1 = new javax.swing.JTextField();
+        CommunityjTextField2 = new javax.swing.JTextField();
+        CityJTextField = new javax.swing.JTextField();
 
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
 
+        AgeJLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         AgeJLabel.setText("Age");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Patient Details");
+        jLabel1.setText("Patient Information");
 
+        patientNameJLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         patientNameJLabel.setText("Patient Name");
 
-        backJButton.setText("<< Back");
+        backJButton.setBackground(new java.awt.Color(102, 102, 102));
+        backJButton.setText("<<BACK");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
 
-        editJButton.setText("Edit");
+        editJButton.setBackground(new java.awt.Color(102, 102, 102));
+        editJButton.setText("EDIT");
         editJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editJButtonActionPerformed(evt);
             }
         });
 
-        saveJButton.setText("Save");
+        saveJButton.setBackground(new java.awt.Color(102, 102, 102));
+        saveJButton.setText("SAVE");
         saveJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveJButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("House No");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setText("Community");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("City");
+
+        HouseNojTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HouseNojTextField1ActionPerformed(evt);
             }
         });
 
@@ -105,22 +137,29 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(editJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(saveJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AgeJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(patientNameJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
-                        .addGap(189, 189, 189)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(personAgeJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(personNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(AgeJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(patientNameJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(189, 189, 189)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(personAgeJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(personNameJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(HouseNojTextField1)
+                            .addComponent(CommunityjTextField2)
+                            .addComponent(CityJTextField)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(editJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(saveJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,12 +174,24 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personAgeJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AgeJLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backJButton)
-                    .addComponent(editJButton)
-                    .addComponent(saveJButton))
-                .addContainerGap(563, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(HouseNojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(CommunityjTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(CityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saveJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -153,9 +204,15 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
         if (isEdit) {
             personNameJTextField.setEnabled(true);
             personAgeJTextField.setEnabled(true);
+            CommunityjTextField2.setEnabled(true);
+            HouseNojTextField1.setEnabled(true);
+            CityJTextField.setEnabled(true);
         } else {
             personNameJTextField.setEnabled(false);
             personAgeJTextField.setEnabled(false);
+            CommunityjTextField2.setEnabled(false);
+            HouseNojTextField1.setEnabled(false);
+            CityJTextField.setEnabled(false);
         }
     }
 
@@ -165,6 +222,9 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
         if (checkBlankInput()) {
             person.setAge(Integer.parseInt(personAgeJTextField.getText()));
             person.setPersonName(personNameJTextField.getText());
+            person.setCommunity(CommunityjTextField2.getText());
+            person.setHouseNo(HouseNojTextField1.getText());
+            person.setCity(CityJTextField.getText());
             JOptionPane.showMessageDialog(this, "Person updated!!",
                     "Update", JOptionPane.INFORMATION_MESSAGE);
             modifyTextFields(false);
@@ -176,7 +236,11 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_saveJButtonActionPerformed
     private Boolean checkBlankInput() {
         if (personAgeJTextField.getText().length() == 0
-                || personNameJTextField.getText().length() == 0) {
+                || personNameJTextField.getText().length() == 0
+                || CommunityjTextField2.getText().length() == 0
+                || HouseNojTextField1.getText().length() == 0
+                || CityJTextField.getText().length() == 0
+                ) {
             return false;
         } else {
             return true;
@@ -189,12 +253,22 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private void HouseNojTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HouseNojTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HouseNojTextField1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeJLabel;
+    private javax.swing.JTextField CityJTextField;
+    private javax.swing.JTextField CommunityjTextField2;
+    private javax.swing.JTextField HouseNojTextField1;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton editJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel patientNameJLabel;
     private javax.swing.JTextField personAgeJTextField;
     private javax.swing.JTextField personNameJTextField;
