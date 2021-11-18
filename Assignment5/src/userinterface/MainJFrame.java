@@ -6,6 +6,7 @@ package userinterface;
 
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
+import Business.Enterprise.Enterprise;
 
 import Business.Organization;
 import Business.UserAccount.UserAccount;
@@ -129,8 +130,40 @@ public class MainJFrame extends javax.swing.JFrame {
        
        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
        
-       Enterprise inEnterprise=null;
+       Enterprise inEnterprise =null;
        Organization inOrganization=null;
+       
+       if(userAccount==null){
+            //Step 2: Go inside each network and check each enterprise
+           // for(Network network:system.getNetworkList()){
+                //Step 2.a: check against each enterprise
+                for(Enterprise enterprise: system.getEnterpriseDirectory().getEnterpriseList())
+                {
+                    //userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
+                    if(userAccount==null)
+                    {
+                       //Step 3:check against each organization for each enterprise
+                       for(Organization organization:enterprise.getRestaurantDirectory().getOrganizationList())
+                       {
+                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
+                           if(userAccount!=null)
+                           {
+                               inEnterprise=enterprise;
+                               inOrganization=organization;
+                               break;
+                           }
+                       }
+                    }
+                    
+                    else{
+                       inEnterprise=enterprise;
+                       break;
+                    }
+                    if(inOrganization!=null){
+                        break;
+                    }  
+                }
+        }
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
