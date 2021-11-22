@@ -62,6 +62,8 @@ public class CreateDeliveryManJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(51, 0, 0));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         btnBack.setBackground(new java.awt.Color(51, 0, 0));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,7 +103,7 @@ public class CreateDeliveryManJPanel extends javax.swing.JPanel {
         UsrNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UsrNameLabel.setForeground(new java.awt.Color(51, 0, 0));
         UsrNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        UsrNameLabel.setText("User Name");
+        UsrNameLabel.setText("Email ID");
 
         passwordLabel.setBackground(new java.awt.Color(51, 0, 0));
         passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N

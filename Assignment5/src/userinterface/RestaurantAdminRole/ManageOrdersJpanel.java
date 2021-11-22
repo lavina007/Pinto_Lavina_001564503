@@ -77,6 +77,10 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(51, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         ItemsListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -100,6 +104,8 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        ItemsListTable.setGridColor(new java.awt.Color(255, 255, 255));
+        ItemsListTable.setSelectionBackground(new java.awt.Color(51, 0, 0));
         jScrollPane2.setViewportView(ItemsListTable);
 
         viewItemsBtn.setBackground(new java.awt.Color(51, 0, 0));
@@ -158,6 +164,8 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        orderRequestJTable.setGridColor(new java.awt.Color(255, 255, 255));
+        orderRequestJTable.setSelectionBackground(new java.awt.Color(51, 0, 0));
         jScrollPane1.setViewportView(orderRequestJTable);
 
         btnBack.setBackground(new java.awt.Color(51, 0, 0));
@@ -279,6 +287,10 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
             return;
         }
         Order order1 = (Order)orderRequestJTable.getValueAt(selectedRow, 0);
+        if(order1.getStatus().equals("delivered")){
+           JOptionPane.showMessageDialog(null, "This order is already delivered");
+           return ; 
+        }
         if(!(order1.getStatus().equals("order placed"))){
             JOptionPane.showMessageDialog(null, "This order is already accepted");
             return ; }
@@ -292,16 +304,22 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
         int selectedRow = orderRequestJTable.getSelectedRow();
 
         if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select the order to be assigned");
             return;
         }
 
         Order order1 = (Order)orderRequestJTable.getValueAt(selectedRow, 0);
-        if(order1.getStatus().equals("delivered")||order1.getStatus().equals("order placed")){
+        if(order1.getStatus().equals("delivered")){
             JOptionPane.showMessageDialog(null, "This order has already been delivered");
             return ; }
+        if(order1.getStatus().equals("assigned")){
+            JOptionPane.showMessageDialog(null, "This order has already been assigned");
+            return;
+        }
         if(!order1.getStatus().equals("accepted")){
             JOptionPane.showMessageDialog(null, "Please accept the order first");
             return ; }
+        
         AssignDeliveryManJPanel panel = new AssignDeliveryManJPanel(userProcessContainer,order1,business);
         userProcessContainer.add("AssignDeliveryManJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

@@ -227,7 +227,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
                 txtUserName.setEnabled(true);
                 txtEmployeeName.setEnabled(false);
                 txtPassword.setEnabled(false);
-                btnCreate.setEnabled(false);
+                btnCreate.setEnabled(true);
                 return;
             }
         }
@@ -236,7 +236,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
             txtUserName.setEnabled(true);
             txtEmployeeName.setEnabled(false);
             txtPassword.setEnabled(false);
-            btnCreate.setEnabled(false);
+            btnCreate.setEnabled(true);
             return;
         } 
         if (passwordPatternCorrect() == false){
@@ -244,7 +244,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
             txtUserName.setEnabled(false);
             txtEmployeeName.setEnabled(false);
             txtPassword.setEnabled(true);
-            btnCreate.setEnabled(false);
+            btnCreate.setEnabled(true);
             return;
         }
         
@@ -255,10 +255,14 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
         Employee employee=organization.getEmployeeDirectory().createEmployee(employeeName);
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, new CustomerRole());
         JOptionPane.showMessageDialog(null, "New customer added successfully");
-
+        txtUserName.setEnabled(true);
+        txtEmployeeName.setEnabled(true);
+        txtPassword.setEnabled(true);
+        btnCreate.setEnabled(true);
         txtEmployeeName.setText("");
         txtUserName.setText("");
         txtPassword.setText("");
+        
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

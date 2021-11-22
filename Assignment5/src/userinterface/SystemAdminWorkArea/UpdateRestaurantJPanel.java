@@ -66,6 +66,8 @@ public class UpdateRestaurantJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(51, 0, 0));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         btnBack.setBackground(new java.awt.Color(51, 0, 0));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));

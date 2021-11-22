@@ -86,7 +86,7 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
         btnBack.setBackground(new java.awt.Color(51, 0, 0));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("<- Back");
+        btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -113,17 +113,18 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Restaurant Name", "Address"
+                "Restaurant Name", "Address", "Enterprise"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        tblRestaurantsList.setGridColor(new java.awt.Color(255, 255, 255));
         tblRestaurantsList.setSelectionBackground(new java.awt.Color(51, 0, 0));
         jScrollPane1.setViewportView(tblRestaurantsList);
 
@@ -199,6 +200,7 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblSearchRestaurant.setGridColor(new java.awt.Color(255, 255, 255));
         tblSearchRestaurant.setSelectionBackground(new java.awt.Color(51, 0, 0));
         jScrollPane2.setViewportView(tblSearchRestaurant);
 

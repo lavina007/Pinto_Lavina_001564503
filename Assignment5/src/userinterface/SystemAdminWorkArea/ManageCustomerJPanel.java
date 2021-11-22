@@ -44,7 +44,6 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
             row[0] = ua.getEmployee().getName();
             row[1] = ua;
             row[2] = ua.getPassword();
-            //row[4] = airliner.getFlightDir().getFlightList().size();
             dtm.addRow(row);
         }
     }
@@ -88,6 +87,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblCustomerList.setGridColor(new java.awt.Color(255, 255, 255));
         tblCustomerList.setSelectionBackground(new java.awt.Color(51, 0, 0));
         jScrollPane1.setViewportView(tblCustomerList);
 

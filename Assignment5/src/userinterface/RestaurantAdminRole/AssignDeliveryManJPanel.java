@@ -59,6 +59,8 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         deliveryManComboBox = new javax.swing.JComboBox<>();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         requestdeliveryJButton.setBackground(new java.awt.Color(51, 0, 0));
         requestdeliveryJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         requestdeliveryJButton.setForeground(new java.awt.Color(255, 255, 255));

@@ -114,14 +114,14 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         UsrNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UsrNameLabel.setForeground(new java.awt.Color(51, 0, 0));
         UsrNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        UsrNameLabel.setText("UserName");
-        jPanel1.add(UsrNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 70, 20));
+        UsrNameLabel.setText("Email Id");
+        jPanel1.add(UsrNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 90, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Employee ID");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 130, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 120, -1));
         jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 170, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -182,27 +182,17 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         txtPassword.setEnabled(false);
 
         if (usernamePatternCorrect() == false){
-            //UsrNameLabel.setForeground (Color.red);
-            //txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
             JOptionPane.showMessageDialog(null, "Please enter a valid email ID");
             txtUserName.setEnabled(true);
             btnSave.setEnabled(true);
             return;
-        } /*else{
-            UsrNameLabel.setForeground (Color.BLACK);
-            txtUserName.setBorder(BorderFactory.createLineBorder(Color.black));
-        }*/
+        } 
         if (passwordPatternCorrect() == false){
-            //passwordLabel.setForeground (Color.red);
-            //txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
             JOptionPane.showMessageDialog(null, "Minimum 6 characters, atleast one upper case, one lower case letter, one digit and one special character");
             txtPassword.setEnabled(true);
             btnSave.setEnabled(true);
             return;
-        }/*else{
-            passwordLabel.setForeground (Color.BLACK);
-            txtPassword.setBorder(BorderFactory.createLineBorder(Color.black));
-        }*/
+        }
         userAccount.setPassword(txtPassword.getText());
         userAccount.setUsername(txtUserName.getText());
         userAccount.getEmployee().setName(txtEmployeeName.getText());

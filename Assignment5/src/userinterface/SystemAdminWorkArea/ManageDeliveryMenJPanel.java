@@ -84,6 +84,7 @@ public class ManageDeliveryMenJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblDeliveryMenList.setGridColor(new java.awt.Color(255, 255, 255));
         tblDeliveryMenList.setSelectionBackground(new java.awt.Color(51, 0, 0));
         jScrollPane1.setViewportView(tblDeliveryMenList);
 

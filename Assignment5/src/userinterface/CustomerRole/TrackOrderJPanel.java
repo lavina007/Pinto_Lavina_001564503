@@ -289,7 +289,6 @@ public class TrackOrderJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         userProcessContainer.remove(this);
         layout.previous(userProcessContainer);
@@ -304,6 +303,10 @@ public class TrackOrderJPanel extends javax.swing.JPanel {
         }
         else{
             Order o = (Order)CurrentOrdersTable.getValueAt(selectedRow,0 );
+            if(o.getStatus().equals("delivered")){
+                JOptionPane.showMessageDialog(null, "Delivered order cannot be cancelled");
+                return;
+            }
             business.getOrderDirectory().deleteOrder(o);
             JOptionPane.showMessageDialog(null, "Order deleted successfully");
             populateCurrentOrdersTable();
