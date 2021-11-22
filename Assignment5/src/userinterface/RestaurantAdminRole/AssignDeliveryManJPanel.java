@@ -36,8 +36,8 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
     
     public void  populateComboBox(){
         DefaultComboBoxModel dm = new DefaultComboBoxModel();
-           for(Organization o:business.getDeliveryManDirectory().organizationList()){
-             for(UserAccount u:o.getUserAccountDirectory().getUserAccountList())  {        
+           for(Organization o : business.getDeliveryManDirectory().organizationList()){
+             for(UserAccount u : o.getUserAccountDirectory().getUserAccountList())  {        
            dm.addElement(u); 
              }
    }
@@ -59,7 +59,9 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         deliveryManComboBox = new javax.swing.JComboBox<>();
 
-        requestdeliveryJButton.setBackground(new java.awt.Color(255, 102, 0));
+        requestdeliveryJButton.setBackground(new java.awt.Color(51, 0, 0));
+        requestdeliveryJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        requestdeliveryJButton.setForeground(new java.awt.Color(255, 255, 255));
         requestdeliveryJButton.setText("Request Delivery");
         requestdeliveryJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,20 +69,23 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Deliver man :");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 0));
+        jLabel1.setText("Delivery man :");
 
-        btnBack.setBackground(new java.awt.Color(255, 102, 0));
-        btnBack.setText("<<Back");
+        btnBack.setBackground(new java.awt.Color(51, 0, 0));
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
 
-        valueLabel.setText("<value>");
-
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Enterprise :");
+        enterpriseLabel.setForeground(new java.awt.Color(51, 0, 0));
+        enterpriseLabel.setText("Select Delivery Man");
 
         deliveryManComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,41 +99,41 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(btnBack))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(94, 94, 94)
+                            .addGap(93, 93, 93)
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(deliveryManComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(55, 55, 55)
-                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
+                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(requestdeliveryJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(requestdeliveryJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(btnBack)
-                .addGap(30, 30, 30)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(valueLabel))
-                .addGap(18, 18, 18)
+                    .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(deliveryManComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(requestdeliveryJButton)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(requestdeliveryJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -142,6 +147,7 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
         order.setDeliveryManUserName(selectedItem.getUsername());
         order.setDeliveryManId(selectedItem.getEmployee().getId());
         JOptionPane.showMessageDialog(null, "Delivery man assigned successfully");
+        requestdeliveryJButton.setEnabled(false);
         return ;
 
     }//GEN-LAST:event_requestdeliveryJButtonActionPerformed

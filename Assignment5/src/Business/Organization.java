@@ -26,7 +26,7 @@ public abstract class Organization {
     public enum Type{
         RestaurantAdmin("RestaurantAdmin"),
         Customer("Customer"),
-        DeliveryMan("Delivery"),
+        DeliveryMan("DeliveryMan"),
         SysAdmin("Sysadmin");
         
         private String value;

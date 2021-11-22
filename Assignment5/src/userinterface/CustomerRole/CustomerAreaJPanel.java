@@ -51,18 +51,27 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnPlaceOrder = new javax.swing.JButton();
         btnTrackOrders = new javax.swing.JButton();
 
-        btnPlaceOrder.setBackground(new java.awt.Color(255, 153, 0));
-        btnPlaceOrder.setText("Place new order");
+        setBackground(new java.awt.Color(51, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnPlaceOrder.setBackground(new java.awt.Color(51, 0, 0));
+        btnPlaceOrder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnPlaceOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlaceOrder.setText("Place Order");
         btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPlaceOrderActionPerformed(evt);
             }
         });
 
-        btnTrackOrders.setBackground(new java.awt.Color(255, 153, 0));
+        btnTrackOrders.setBackground(new java.awt.Color(51, 0, 0));
+        btnTrackOrders.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnTrackOrders.setForeground(new java.awt.Color(255, 255, 255));
         btnTrackOrders.setText("Track Orders");
         btnTrackOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,25 +79,42 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnPlaceOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTrackOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(btnPlaceOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(btnTrackOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnTrackOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPlaceOrder))
-                .addContainerGap(386, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(btnPlaceOrder)
-                .addGap(71, 71, 71)
-                .addComponent(btnTrackOrders)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -106,13 +132,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
     private void btnTrackOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackOrdersActionPerformed
-        // TODO add your handling code here:
-        TrackOrderJPanel panel = new TrackOrderJPanel(userProcessContainer,
+ 
+        TrackOrderJPanel trackOrder = new TrackOrderJPanel(userProcessContainer,
             userAccount,
             organization,
             enterprise,
             business);
-        userProcessContainer.add("CancelOrderJPanel", panel);
+        userProcessContainer.add("TrackOrderJPanel", trackOrder);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnTrackOrdersActionPerformed
@@ -120,5 +146,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPlaceOrder;
     private javax.swing.JButton btnTrackOrders;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

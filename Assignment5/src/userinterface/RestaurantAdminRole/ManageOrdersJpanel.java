@@ -66,29 +66,69 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnBack = new javax.swing.JButton();
-        refreshJButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        orderRequestJTable = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ItemsListTable = new javax.swing.JTable();
         viewItemsBtn = new javax.swing.JButton();
         AcceptOrderBtn = new javax.swing.JButton();
         BtnDeliverOrder = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        ItemsListTable = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        orderRequestJTable = new javax.swing.JTable();
+        btnBack = new javax.swing.JButton();
+        refreshJButton = new javax.swing.JButton();
 
-        btnBack.setBackground(new java.awt.Color(255, 153, 0));
-        btnBack.setText("<- Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        ItemsListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Item Name", "Price"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(ItemsListTable);
+
+        viewItemsBtn.setBackground(new java.awt.Color(51, 0, 0));
+        viewItemsBtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        viewItemsBtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewItemsBtn.setText("View Items");
+        viewItemsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                viewItemsBtnActionPerformed(evt);
             }
         });
 
-        refreshJButton.setBackground(new java.awt.Color(255, 153, 0));
-        refreshJButton.setText("Refresh");
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+        AcceptOrderBtn.setBackground(new java.awt.Color(51, 0, 0));
+        AcceptOrderBtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AcceptOrderBtn.setForeground(new java.awt.Color(255, 255, 255));
+        AcceptOrderBtn.setText("Accept Order");
+        AcceptOrderBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
+                AcceptOrderBtnActionPerformed(evt);
+            }
+        });
+
+        BtnDeliverOrder.setBackground(new java.awt.Color(51, 0, 0));
+        BtnDeliverOrder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BtnDeliverOrder.setForeground(new java.awt.Color(255, 255, 255));
+        BtnDeliverOrder.setText("Assign Orders");
+        BtnDeliverOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDeliverOrderActionPerformed(evt);
             }
         });
 
@@ -120,101 +160,85 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(orderRequestJTable);
 
-        viewItemsBtn.setBackground(new java.awt.Color(255, 153, 0));
-        viewItemsBtn.setText("View Items");
-        viewItemsBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(51, 0, 0));
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewItemsBtnActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
-        AcceptOrderBtn.setBackground(new java.awt.Color(255, 153, 0));
-        AcceptOrderBtn.setText("Accept Order");
-        AcceptOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+        refreshJButton.setBackground(new java.awt.Color(51, 0, 0));
+        refreshJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
+        refreshJButton.setText("Refresh");
+        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AcceptOrderBtnActionPerformed(evt);
+                refreshJButtonActionPerformed(evt);
             }
         });
 
-        BtnDeliverOrder.setBackground(new java.awt.Color(255, 153, 0));
-        BtnDeliverOrder.setText("Assign Order to Delivery man");
-        BtnDeliverOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnDeliverOrderActionPerformed(evt);
-            }
-        });
-
-        ItemsListTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Item Name", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(ItemsListTable);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(refreshJButton)))
+                .addGap(26, 26, 26))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(viewItemsBtn)
+                        .addGap(51, 51, 51)
+                        .addComponent(AcceptOrderBtn)
+                        .addGap(46, 46, 46)
+                        .addComponent(BtnDeliverOrder)))
+                .addContainerGap(238, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewItemsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AcceptOrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnDeliverOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 940, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addComponent(btnBack)
-                            .addGap(321, 321, 321)
-                            .addComponent(refreshJButton))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(230, 230, 230)
-                            .addComponent(viewItemsBtn)
-                            .addGap(75, 75, 75)
-                            .addComponent(AcceptOrderBtn)
-                            .addGap(63, 63, 63)
-                            .addComponent(BtnDeliverOrder))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(330, 330, 330)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnBack)
-                        .addComponent(refreshJButton))
-                    .addGap(37, 37, 37)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(34, 34, 34)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(viewItemsBtn)
-                        .addComponent(AcceptOrderBtn)
-                        .addComponent(BtnDeliverOrder))
-                    .addGap(37, 37, 37)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -290,6 +314,7 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
     private javax.swing.JButton BtnDeliverOrder;
     private javax.swing.JTable ItemsListTable;
     private javax.swing.JButton btnBack;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orderRequestJTable;

@@ -72,11 +72,14 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         txtPassword = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(51, 0, 0));
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSave.setBackground(new java.awt.Color(255, 153, 0));
-        btnSave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSave.setBackground(new java.awt.Color(51, 0, 0));
+        btnSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,12 +89,14 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 144, 37));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("View/Update Manager");
+        jLabel1.setText("Update User Information");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 450, -1));
 
-        btnUpdate.setBackground(new java.awt.Color(255, 153, 0));
-        btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(51, 0, 0));
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,23 +105,27 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 144, 37));
 
-        passwordLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(51, 0, 0));
         passwordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         passwordLabel.setText("Password");
         jPanel1.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
 
-        UsrNameLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        UsrNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UsrNameLabel.setForeground(new java.awt.Color(51, 0, 0));
         UsrNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UsrNameLabel.setText("UserName");
         jPanel1.add(UsrNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 70, 20));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Employee ID");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 130, -1));
         jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 170, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Employee Name");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
@@ -136,34 +145,32 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 170, -1));
 
-        btnBack.setBackground(new java.awt.Color(255, 153, 0));
-        btnBack.setText("<- Back");
+        btnBack.setBackground(new java.awt.Color(51, 0, 0));
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 854, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(247, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(219, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -174,24 +181,28 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         txtEmployeeName.setEnabled(false);
         txtPassword.setEnabled(false);
 
-        if (usernamePatternCorrect()==false){
-            UsrNameLabel.setForeground (Color.red);
-            txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
-            JOptionPane.showMessageDialog(null, "Username should be in the format of xx_xx@xx.xx");
+        if (usernamePatternCorrect() == false){
+            //UsrNameLabel.setForeground (Color.red);
+            //txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
+            JOptionPane.showMessageDialog(null, "Please enter a valid email ID");
+            txtUserName.setEnabled(true);
+            btnSave.setEnabled(true);
             return;
-        } else{
+        } /*else{
             UsrNameLabel.setForeground (Color.BLACK);
             txtUserName.setBorder(BorderFactory.createLineBorder(Color.black));
-        }
-        if (passwordPatternCorrect()==false){
-            passwordLabel.setForeground (Color.red);
-            txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
-            JOptionPane.showMessageDialog(null, "Password should be at least 6 digits and contain at least one upper case letter, one lower case letter, one digit and one special character $, *, # or &.");
+        }*/
+        if (passwordPatternCorrect() == false){
+            //passwordLabel.setForeground (Color.red);
+            //txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
+            JOptionPane.showMessageDialog(null, "Minimum 6 characters, atleast one upper case, one lower case letter, one digit and one special character");
+            txtPassword.setEnabled(true);
+            btnSave.setEnabled(true);
             return;
-        }else{
+        }/*else{
             passwordLabel.setForeground (Color.BLACK);
             txtPassword.setBorder(BorderFactory.createLineBorder(Color.black));
-        }
+        }*/
         userAccount.setPassword(txtPassword.getText());
         userAccount.setUsername(txtUserName.getText());
         userAccount.getEmployee().setName(txtEmployeeName.getText());
@@ -225,7 +236,7 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private boolean usernamePatternCorrect(){
-        Pattern p = Pattern.compile("^[a-zA-Z0-9]+_[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Pattern p = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
         Matcher m = p.matcher(txtUserName.getText());
         boolean result = m.matches();
         return result;

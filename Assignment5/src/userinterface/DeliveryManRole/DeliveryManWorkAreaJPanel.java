@@ -78,25 +78,30 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        processJButton.setBackground(new java.awt.Color(255, 153, 0));
+        processJButton.setBackground(new java.awt.Color(51, 0, 0));
+        processJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        processJButton.setForeground(new java.awt.Color(255, 255, 255));
         processJButton.setText("Order Delivered");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 130, 40));
 
-        refreshJButton.setBackground(new java.awt.Color(255, 153, 0));
+        refreshJButton.setBackground(new java.awt.Color(51, 0, 0));
+        refreshJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 23, 130, 40));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,17 +129,21 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        workRequestJTable.setSelectionBackground(new java.awt.Color(51, 0, 0));
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 710, 96));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 730, 96));
 
+        enterpriseLabel.setBackground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Delivery Man Work Area");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 0, 0));
+        enterpriseLabel.setText("Delivery Information ");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 230, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel2.setText("Select an order to be delivered:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 0, 0));
+        jLabel2.setText("Select Order to Deliver");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
@@ -142,14 +151,17 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = workRequestJTable.getSelectedRow();
 
         if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select the order to deliver");
             return;
         }
 
         Order order1 = (Order)workRequestJTable.getValueAt(selectedRow, 0);
-        order1.setStatus("delivered");
-
-        JOptionPane.showMessageDialog(null, "This order is delivered successfully");
-
+        if(order1.getStatus().equals("delivered")){
+          JOptionPane.showMessageDialog(null, "This order is already delivered") ;
+        }else{
+          order1.setStatus("delivered");  
+          JOptionPane.showMessageDialog(null, "Order delivered successfully");
+        }      
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
