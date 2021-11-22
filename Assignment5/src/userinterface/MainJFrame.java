@@ -123,21 +123,22 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-        // Get user name
        String userName = userNameJTextField.getText();
-       char[] passwordArray = passwordField.getPassword();
-       String password = String.valueOf(passwordArray);
-       
-       UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
-       
-       Enterprise inEnterprise =null;
-       Organization inOrganization=null;
-       
-       if(userAccount==null){
+        // Get Password
+        char[] passwordCharArray = passwordField.getPassword();
+        String password = String.valueOf(passwordCharArray);
+        
+        //Step1: Check in the system admin user account directory if you have the user
+        UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
+        
+        Enterprise inEnterprise=null;
+        Organization inOrganization=null;
+        
+        if(userAccount==null){
             //Step 2: Go inside each network and check each enterprise
            // for(Network network:system.getNetworkList()){
                 //Step 2.a: check against each enterprise
-                for(Enterprise enterprise: system.getEnterpriseDirectory().getEnterpriseList())
+                for(Enterprise enterprise:system.getEnterpriseDirectory().getEnterpriseList())
                 {
                     //userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
                     if(userAccount==null)
@@ -164,6 +165,48 @@ public class MainJFrame extends javax.swing.JFrame {
                     }  
                 }
         }
+        
+       // step-3 --to check for customer users
+       
+        if(userAccount==null){
+           for(Organization organization:system.getCustomerDirectory().getOrganizationList())
+                       {
+                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
+                           if(userAccount!=null)
+                           {
+                               inOrganization=organization;
+                               break;
+                           }
+                       }
+        }
+         //step-4--to check for deliver users
+               if(userAccount==null){
+           for(Organization organization:system.getDeliveryManDirectory().organizationList())
+                       {
+                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
+                           if(userAccount!=null)
+                           {
+                               inOrganization=organization;
+                               break;
+                           }
+                       }
+        }
+        
+        if(userAccount==null){
+            JOptionPane.showMessageDialog(null, "Invalid credentials");
+            return;
+        }
+        else{
+            CardLayout layout=(CardLayout)container.getLayout();
+            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+            layout.next(container);
+        }
+        
+        loginJButton.setEnabled(false);
+        logoutJButton.setEnabled(true);
+        userNameJTextField.setEnabled(false);
+        passwordField.setEnabled(false);
+    
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed

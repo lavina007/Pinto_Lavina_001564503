@@ -24,21 +24,20 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
     private EcoSystem business;
-    private  UserAccount account;
+    private UserAccount account;
     private Organization organization;
     private Enterprise enterprise;
     /**
      * Creates new form ManageOrdersJpanel
      */
-    public ManageOrdersJpanel(JPanel userProcessContainer,EcoSystem business,Enterprise enterprise, Organization organization, UserAccount account) {
+    public ManageOrdersJpanel(JPanel userProcessContainer, EcoSystem business, Enterprise enterprise, Organization organization, UserAccount account) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
-       this.account=account;
+        this.account=account;
         this.organization=organization;
         this.enterprise=enterprise;
-        this.business=business;
-        
+        this.business=business;       
         populateTable();
     }
     
@@ -221,7 +220,6 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
@@ -253,18 +251,15 @@ public class ManageOrdersJpanel extends javax.swing.JPanel {
     private void AcceptOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptOrderBtnActionPerformed
         // TODO add your handling code here:
         int selectedRow = orderRequestJTable.getSelectedRow();
-
         if (selectedRow < 0){
             return;
         }
-
         Order order1 = (Order)orderRequestJTable.getValueAt(selectedRow, 0);
         if(!(order1.getStatus().equals("order placed"))){
             JOptionPane.showMessageDialog(null, "This order is already accepted");
             return ; }
 
         order1.setStatus("accepted");
-
         JOptionPane.showMessageDialog(null, "Order accepted successfully");
     }//GEN-LAST:event_AcceptOrderBtnActionPerformed
 

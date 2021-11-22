@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author admin
+ * @author Lavina
  */
 public class AssignDeliveryManJPanel extends javax.swing.JPanel {
     
@@ -26,7 +26,7 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AssignDeliveryManJPanel
      */
-    public AssignDeliveryManJPanel(JPanel userProcessContainer, Order order,EcoSystem business) {
+    public AssignDeliveryManJPanel(JPanel userProcessContainer, Order order, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.order = order;
@@ -35,10 +35,9 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
     }
     
     public void  populateComboBox(){
-        DefaultComboBoxModel dm=new DefaultComboBoxModel();
+        DefaultComboBoxModel dm = new DefaultComboBoxModel();
            for(Organization o:business.getDeliveryManDirectory().organizationList()){
-             for(UserAccount u:o.getUserAccountDirectory().getUserAccountList())  {
-         
+             for(UserAccount u:o.getUserAccountDirectory().getUserAccountList())  {        
            dm.addElement(u); 
              }
    }
@@ -135,7 +134,6 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
 
     private void requestdeliveryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestdeliveryJButtonActionPerformed
         UserAccount selectedItem = (UserAccount) deliveryManComboBox.getSelectedItem();
-
         if (selectedItem == null){
             return;
         }
@@ -149,11 +147,9 @@ public class AssignDeliveryManJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_requestdeliveryJButtonActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void deliveryManComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryManComboBoxActionPerformed
